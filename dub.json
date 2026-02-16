@@ -1,0 +1,18 @@
+{
+    "name": "dirc-gtk4",
+    "description": "IRC Client with GTK4",
+    "authors": ["x1bncwn"],
+    "license": "MIT",
+    "dependencies": {
+        "gid:gtk4": "~>0.9.8",
+        "dirk": {"path": "dirk"}
+    },
+    "configurations": [
+        {
+            "name": "application",
+            "targetType": "executable",
+            "importPaths": ["dirk", "source"],
+            "sourcePaths": ["source"]
+        }
+    ]
+}

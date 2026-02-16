@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+
+  <!-- Main Window -->
+  <object class="GtkApplicationWindow" id="main_window">
+    <property name="title">D IRC Client</property>
+    <property name="default-width">1024</property>
+    <property name="default-height">768</property>
+    
+    <!-- Titlebar -->
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header_bar">
+        <property name="show-title-buttons">true</property>
+      </object>
+    </child>
+    
+    <!-- Content -->
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">0</property>
+        <property name="margin-start">0</property>
+        <property name="margin-end">0</property>
+        <property name="margin-top">0</property>
+        <property name="margin-bottom">0</property>
+        
+        <child>
+          <object class="GtkPaned" id="hpaned">
+            <property name="orientation">horizontal</property>
+            <property name="shrink-start-child">false</property>
+            <property name="shrink-end-child">false</property>
+            <property name="resize-start-child">true</property>
+            <property name="resize-end-child">true</property>
+            <property name="position">200</property>
+            <property name="vexpand">true</property>
+
+            <!-- Sidebar -->
+            <child>
+              <object class="GtkBox" id="sidebar_box">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <property name="margin-start">5</property>
+                <property name="margin-end">5</property>
+                <property name="margin-top">5</property>
+                <property name="margin-bottom">5</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Servers &amp; Channels</property>
+                    <property name="halign">start</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSeparator">
+                    <property name="orientation">horizontal</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow" id="sidebar_scrolled">
+                    <property name="vexpand">true</property>
+                    <property name="hexpand">true</property>
+                    <property name="hscrollbar-policy">automatic</property>
+                    <property name="vscrollbar-policy">automatic</property>
+                    <child>
+                      <object class="GtkTreeView" id="channel_tree">
+                        <property name="headers-visible">false</property>
+                        <property name="vexpand">true</property>
+                        <property name="hexpand">true</property>
+                        <child>
+                          <object class="GtkTreeViewColumn">
+                            <property name="title">Name</property>
+                            <child>
+                              <object class="GtkCellRendererText"/>
+                              <attributes>
+                                <attribute name="text">0</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <!-- Chat Area -->
+            <child>
+              <object class="GtkBox" id="chat_area_box">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <property name="margin-start">5</property>
+                <property name="margin-end">5</property>
+                <property name="margin-top">5</property>
+                <property name="margin-bottom">5</property>
+                <property name="vexpand">true</property>
+                <property name="hexpand">true</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="vexpand">true</property>
+                    <property name="hexpand">true</property>
+                    <child>
+                      <object class="GtkScrolledWindow" id="chat_scrolled">
+                        <property name="vexpand">true</property>
+                        <property name="hexpand">true</property>
+                        <property name="hscrollbar-policy">automatic</property>
+                        <property name="vscrollbar-policy">automatic</property>
+                        <child>
+                          <object class="GtkTextView" id="chat_text_view">
+                            <property name="editable">false</property>
+                            <property name="wrap-mode">word</property>
+                            <property name="vexpand">true</property>
+                            <property name="hexpand">true</property>
+                            <property name="accepts-tab">false</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <!-- Input Area -->
+        <child>
+          <object class="GtkBox" id="input_box">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">5</property>
+            <property name="margin-start">5</property>
+            <property name="margin-end">5</property>
+            <property name="margin-bottom">5</property>
+            <property name="margin-top">5</property>
+            <child>
+              <object class="GtkEntry" id="input_entry">
+                <property name="hexpand">true</property>
+                <property name="placeholder-text">Type message or command...</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="send_button">
+                <property name="label">Send</property>
+                <property name="margin-start">5</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

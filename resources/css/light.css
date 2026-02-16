@@ -1,0 +1,151 @@
+/* Light theme for D IRC Client */
+window {
+    background-color: #f5f5f5;
+}
+
+textview {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: monospace;
+    font-size: 10pt;
+}
+
+textview text {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+entry {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+entry:focus {
+    border-color: #4a90d9;
+    outline: none;
+}
+
+button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+button:active {
+    background-color: #e0e0e0;
+}
+
+treeview {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+treeview:selected {
+    background-color: #4a90d9;
+    color: #ffffff;
+}
+
+treeview.view {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+treeview.view:selected {
+    background-color: #4a90d9;
+    color: #ffffff;
+}
+
+treeview.view:hover {
+    background-color: #f0f0f0;
+}
+
+scrolledwindow {
+    background-color: #ffffff;
+}
+
+scrollbar {
+    background-color: #f5f5f5;
+}
+
+scrollbar slider {
+    background-color: #cccccc;
+    border-radius: 10px;
+}
+
+scrollbar slider:hover {
+    background-color: #bbbbbb;
+}
+
+scrollbar slider:active {
+    background-color: #aaaaaa;
+}
+
+paned {
+    background-color: #f5f5f5;
+}
+
+paned separator {
+    background-color: #cccccc;
+    min-width: 2px;
+}
+
+headerbar {
+    background-color: #f5f5f5;
+    color: #000000;
+    border-bottom: 1px solid #cccccc;
+}
+
+label {
+    color: #000000;
+}
+
+separator {
+    background-color: #cccccc;
+}
+
+/* Channel list styling */
+.channel-list-row {
+    padding: 4px 8px;
+}
+
+.channel-list-row.server {
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.channel-list-row.channel {
+    padding-left: 20px;
+}
+
+/* Timestamp styling */
+.timestamp {
+    color: #555555;
+}
+
+/* System message styling */
+.system-message {
+    color: #555555;
+    font-style: italic;
+}
+
+/* Nickname colors are handled programmatically, 
+   but we can define base styles */
+.nickname {
+    font-weight: bold;
+}
+
+/* Mode symbol colors */
+.mode-operator { color: #d32f2f; }
+.mode-voice { color: #388e3c; }
+.mode-halfop { color: #f57c00; }
+.mode-admin { color: #7b1fa2; }
+.mode-owner { color: #1976d2; }

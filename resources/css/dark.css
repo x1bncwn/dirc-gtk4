@@ -1,0 +1,163 @@
+/* Dark theme for D IRC Client */
+window {
+    background-color: #2d2d2d;
+}
+
+textview {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 10pt;
+}
+
+textview text {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+entry {
+    background-color: #3c3c3c;
+    color: #ffffff;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+entry:focus {
+    border-color: #4a90d9;
+    outline: none;
+}
+
+button {
+    background-color: #3c3c3c;
+    color: #ffffff;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: #4a4a4a;
+}
+
+button:active {
+    background-color: #2a2a2a;
+}
+
+treeview {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+treeview:selected {
+    background-color: #4a90d9;
+}
+
+treeview.view {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+treeview.view:selected {
+    background-color: #4a90d9;
+}
+
+treeview.view:hover {
+    background-color: #3a3a3a;
+}
+
+scrolledwindow {
+    background-color: #1e1e1e;
+}
+
+scrolledwindow undershoot.top,
+scrolledwindow undershoot.bottom,
+scrolledwindow undershoot.left,
+scrolledwindow undershoot.right {
+    background: none;
+}
+
+scrolledwindow overshoot.top,
+scrolledwindow overshoot.bottom,
+scrolledwindow overshoot.left,
+scrolledwindow overshoot.right {
+    background: none;
+}
+
+scrollbar {
+    background-color: #2d2d2d;
+}
+
+scrollbar slider {
+    background-color: #555555;
+    border-radius: 10px;
+}
+
+scrollbar slider:hover {
+    background-color: #666666;
+}
+
+scrollbar slider:active {
+    background-color: #777777;
+}
+
+paned {
+    background-color: #2d2d2d;
+}
+
+paned separator {
+    background-color: #555555;
+    min-width: 2px;
+}
+
+headerbar {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-bottom: 1px solid #555555;
+}
+
+label {
+    color: #ffffff;
+}
+
+separator {
+    background-color: #555555;
+}
+
+/* Channel list styling */
+.channel-list-row {
+    padding: 4px 8px;
+}
+
+.channel-list-row.server {
+    font-weight: bold;
+    color: #4a90d9;
+}
+
+.channel-list-row.channel {
+    padding-left: 20px;
+}
+
+/* Timestamp styling */
+.timestamp {
+    color: #aaaaaa;
+}
+
+/* System message styling */
+.system-message {
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+/* Nickname colors are handled programmatically, 
+   but we can define base styles */
+.nickname {
+    font-weight: bold;
+}
+
+/* Mode symbol colors */
+.mode-operator { color: #ff4444; }
+.mode-voice { color: #4caf50; }
+.mode-halfop { color: #ff9800; }
+.mode-admin { color: #9c27b0; }
+.mode-owner { color: #2196f3; }
