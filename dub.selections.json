@@ -1,9 +1,0 @@
-{
-	"fileVersion": 1,
-	"versions": {
-		"dirk": {"path":"dirk"},
-		"gid": "0.9.8",
-		"libev": "5.0.0+4.04",
-		"openssl": "3.4.0"
-	}
-}
