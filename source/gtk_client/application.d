@@ -15,15 +15,6 @@ import gio.menu_model;
 import gio.types;
 import gio.simple_action;
 
-
-/*
-import glib.source;
-import glib.global;
-import glib.iochannel;
-import glib.types;
-import glib.variant;
-*/
-
 import gobject.types;
 
 import std.concurrency;
@@ -33,11 +24,7 @@ import std.algorithm;
 import std.datetime;
 import std.range;
 
-/*import core.stdc.errno;
-import core.sys.posix.unistd;
-import core.sys.posix.fcntl;*/
 import core.thread;
-/*import core.atomic;*/
 
 import models;
 import logging;
@@ -84,9 +71,9 @@ class GTKClient
 
     this()
     {
-	import core.stdc.errno : errno;
-	import core.sys.posix.fcntl : fcntl, F_GETFL, F_SETFL, O_NONBLOCK;
-	import core.sys.posix.unistd : pipe;
+		import core.stdc.errno : errno;
+		import core.sys.posix.fcntl : fcntl, F_GETFL, F_SETFL, O_NONBLOCK;
+		import core.sys.posix.unistd : pipe;
 
         logToTerminal("Initializing GTK application", "INFO", "main");
         app = new Application("org.example.dIRC", ApplicationFlags.FlagsNone);
@@ -120,7 +107,7 @@ class GTKClient
     ~this()
     {
         import core.sys.posix.unistd : close;
-	import glib.source : Source;
+		import glib.source : Source;
 
         // Clean up pipe
         if (pipeSourceId > 0)
@@ -135,7 +122,7 @@ class GTKClient
 
     private void processPendingMessages()
     {
-	import core.atomic : atomicExchange;
+		import core.atomic : atomicExchange;
         do
         {
             bool gotMessage = true;
@@ -220,11 +207,11 @@ class GTKClient
 
     private void setupPipeWatch()
     {
-	import core.stdc.errno : errno, EAGAIN, EWOULDBLOCK;
-	import core.sys.posix.unistd : read, ssize_t;
-	import glib.iochannel : IOChannel;
-	import glib.types : IOCondition;
-	import glib.global : ioAddWatch;
+		import core.stdc.errno : errno, EAGAIN, EWOULDBLOCK;
+		import core.sys.posix.unistd : read, ssize_t;
+		import glib.iochannel : IOChannel;
+		import glib.types : IOCondition;
+		import glib.global : ioAddWatch;
 
         logToTerminal("Setting up pipe watch on fd " ~ to!string(pipeFds[0]), "DEBUG", "main");
         auto channel = IOChannel.unixNew(pipeFds[0]);
@@ -271,8 +258,8 @@ class GTKClient
         });
 
         logToTerminal("ioAddWatch returned source ID: " ~ to!string(pipeSourceId), "DEBUG", "main");
-
-	window.connectCloseRequest(delegate(Window window) {
+		
+		window.connectCloseRequest(delegate(Window window) {
             logToTerminal("Close request received", "INFO", "main");
             disconnectAllServers();
 
@@ -313,7 +300,7 @@ class GTKClient
 
     private void setupActions()
     {
-	import glib.variant : Variant;
+		import glib.variant : Variant;
 
         auto connectAction = new SimpleAction("connect", null);
         connectAction.connectActivate(delegate(Variant parameter) {
@@ -484,8 +471,8 @@ class GTKClient
 
     private void sendMessage()
     {
-	auto text = inputHandler.getText();
-	inputHandler.clearInput();
+		auto text = inputHandler.getText();
+		inputHandler.clearInput();
 
         if (text.length == 0)
             return;
