@@ -7,8 +7,10 @@
 	"description": "Standard-compliant, high-performance IRC library",
 	"homepage": "https://github.com/JakobOvrum/Dirk",
 	"license": "MIT",
-	"dependencies": {                                                                    "openssl": "~>3.4.0",
-                "libev": "~>5.0.0"                                                   },
+	"dependencies": {
+	    "openssl": "~>3.4.0",
+        "libev": "~>5.0.0"
+	},
 	"importPaths": [
 		"."
 	],
